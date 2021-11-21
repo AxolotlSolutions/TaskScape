@@ -3,3 +3,21 @@ body {
     Arial, sans-serif;
   color: brown;
 }
+.navContainer{
+  display: flex;
+  width: 100%;
+
+}
+.btnDefault {
+  // display: flex;
+  background-color: black;
+  align-content: space-around;
+	height: 20px;
+	width: 40px;
+	padding-right: 100px;
+	border-radius: 15px 50px 30px;
+	border: none;
+	margin-left: 20px;
+	margin-top: 20px;
+	// opacity: 70%
+}
