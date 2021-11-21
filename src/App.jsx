@@ -1,12 +1,16 @@
 import './styles.scss';
 import React, { Component } from 'react';
 import ReactDOM from "react-dom";
-import Homepage from "./Homepage.jsx"
+import LoginPage from "./LoginPage.jsx"
 
 function App() {
   return(
+    
     <div>
-      <LoginPage />
+      <h1><center>I Need An Adult!</center></h1>
+      <nav style={{ borderBottom: 'solid 1px', paddingBottom: '1rem' }}>
+        <LoginPage />
+      </nav>
     </div>
   )
 }
