@@ -1,11 +1,12 @@
 const express = require('express');
+const rewardsController = require('../controllers/rewardsController');
+const router = express.Router();
 
-const rewardsController = {};
+//getRewards
 
-rewardsController.getRewards = (req, res, next) => { };
+//addRewards
 
-rewardsController.addRewards = (req, res, next) => { };
+//deleteRewards
 
-rewardsController.deleteRewards = (req, res, next) => { };
 
-module.exports = rewardsController;
+module.exports = router;

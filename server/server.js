@@ -26,10 +26,11 @@ app.get('/', (req, res) => {
 });
 
 
+
 // placeholder to respond to api requests
-app.get('/api', (req, res) => {
-  res.send(mockResponse);
-});
+// app.get('/api', (req, res) => {
+//   res.send(mockResponse);
+// });
 
 
 // Routers
@@ -38,8 +39,15 @@ const taskRouter = require('./routes/task.js');
 // Rewards
 const rewardsRouter = require('./routes/rewards.js');
 
+// GET REQUEST to '/' serves dashboard
+
 app.use('/task', taskRouter);
 app.use('/rewards', rewardsRouter);
+
+// Catch all request handler
+app.use((req, res) => {
+  res.sendStatus(418)
+})
 
 // Global Error Handler
 app.use((err, req, res, next) => {
