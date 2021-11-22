@@ -3,10 +3,14 @@ const db = require('../db.js');
 
 const taskController = {}
 
+// create new task in database
+// information sent in the request body
 taskController.addTask = async (req, res, next) => {
   try {
+    // deconstruct the properties from the request body 
     const { name, done, value } = req.body;
 
+    // 
     const SQLquery = `INSERT INTO task (name, done, value) VALUES ('${name}', '${done}', '${value}')`;
     const results = await db.query(SQLquery);
     return next();

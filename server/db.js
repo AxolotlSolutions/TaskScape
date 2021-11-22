@@ -1,22 +1,15 @@
 const { Pool } = require('pg');
-
+// ElephantSQL URI
 const PG_URI = 'postgres://itaqqisz:nPar51lkniU_I4zrCvdPmMPlF_JT5j-M@castor.db.elephantsql.com/itaqqisz';
 
-// This may require a password.  'postgres' is a superuser which doesn't require authentication, but if needed see this resource:
-// https://chartio.com/resources/tutorials/how-to-set-the-default-user-password-in-postgresql/
-
-// const pool = new Pool({
-//   user: "postgres",
-//   password: "root",
-//   database: "todo_database",
-//   host: "localhost",
-//   port: 5432
-// });
-
+// creates a new pool here using the connection string above
 const pool = new Pool({
   connectionString: PG_URI
 });
 
+// We export an object that contains a property called query,
+// which is a function that returns the invocation of pool.query() after logging the query
+// This will be required in the controllers to be the access point to the database
 module.exports = {
   query: (text, params, callback) => {
     console.log('executed query', text);

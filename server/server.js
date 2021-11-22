@@ -10,11 +10,7 @@ const DIST_DIR = path.join(__dirname, '../dist');
 // ./dist/index.html file path
 const HTML_FILE = path.join(DIST_DIR, 'index.html');
 
-const mockResponse = {
-  foo: 'bar',
-  bar: 'foo'
-};
-
+// to serve the bundle.js in dist when in production
 app.use(express.static(DIST_DIR));
 // parse incoming requests
 app.use(express.json());
@@ -25,23 +21,15 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/index.html'));
 });
 
-
-
-// placeholder to respond to api requests
-// app.get('/api', (req, res) => {
-//   res.send(mockResponse);
-// });
-
-
 // Routers
-// Tasks
 const taskRouter = require('./routes/task.js');
-// Rewards
 const rewardsRouter = require('./routes/rewards.js');
 
 // GET REQUEST to '/' serves dashboard
 
+// routes requests to '/task/ to taskRouter
 app.use('/task', taskRouter);
+// routes requests to '/rewards/ to rewardsRouter
 app.use('/rewards', rewardsRouter);
 
 // Catch all request handler
@@ -57,12 +45,12 @@ app.use((err, req, res, next) => {
     message: { err: 'Internal Service Error' }
   };
 
-  // const errorObj = Object.assign({}, defaultError, err)
-  const errorObj = ({ ...defaultError, ...err })
+  const errorObj = ({ ...defaultError, ...err });
   console.log(errorObj.log);
   return res.status(errorObj.status).json(errorObj.message)
 })
 
+// listening to either process.env.PORT || 3000
 app.listen(port, function () {
   console.log('App listening on port: ' + port);
 });
