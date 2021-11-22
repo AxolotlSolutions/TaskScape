@@ -1,7 +1,9 @@
-import './styles.scss';
-import React, { Component } from 'react';
+import "./styles.scss";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import LoginPage from "./LoginPage.jsx"
+import LoginPage from "./LoginPage.jsx";
+import { useState } from "react";
+import MainContainer from "./components/MainContainer.jsx";
 
 function App() {
   return(
@@ -11,6 +13,7 @@ function App() {
       <nav style={{ borderBottom: 'solid 1px', paddingBottom: '1rem' }}>
         <LoginPage />
       </nav>
+      <MainContainer />
     </div>
   )
 }
