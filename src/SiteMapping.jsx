@@ -8,19 +8,19 @@ function NavBar() {
     return (
         <div className="navContainer">
             <Link to="/tasks">
-              <button className="btnDefault" id="taskBtn"></button>
+              <button className="btnDefault" id="taskBtn"><b>Tasks</b></button>
             </Link>
 
             <Link to="/calendar">
-              <button className="btnDefault" id="calBtn"></button>
+              <button className="btnDefault" id="calBtn"><b>Calendar</b></button>
             </Link>
 
             <Link to="/rewards">
-              <button className="btnDefault" id="rewardsBtn"></button>
+              <button className="btnDefault" id="rewardsBtn"><b>Rewards</b></button>
             </Link>
 
             <Link to="/taskarchive">
-              <button className="btnDefault" id="archiveBtn"></button>
+              <button className="btnDefault" id="archiveBtn"><b>Archive</b></button>
             </Link>
         </div>
       );

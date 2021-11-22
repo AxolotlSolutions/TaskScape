@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '/src/SiteMapping.jsx';
 
-export default function Rewards() {
+export default function RewardsPage() {
     return (
-        <Link to="/rewards">
-            <button>PLACEHOLDERFORBUTTON</button>
-        </Link>
+        <NavBar />
     );
 }
