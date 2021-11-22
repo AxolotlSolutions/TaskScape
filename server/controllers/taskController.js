@@ -3,29 +3,47 @@ const db = require('../db.js');
 
 const taskController = {}
 
-taskController.addTask = (req, res, next) => {
+taskController.addTask = async (req, res, next) => {
+  try {
+    const { name, done, value } = req.body;
 
+    const SQLquery = `INSERT INTO task (name, done, value) VALUES ('${name}', '${done}', '${value}')`;
+    const results = await db.query(SQLquery);
+    return next();
+  } catch (err) {
+    return next({
+      log: `taskController.addTask: ERROR: ${err}`,
+      message: { err: 'Error occurred in taskController.addTask. Check server logs for more details.' }
+    })
+  }
 };
 
-taskController.getTask = async (req, res, next) => {
+taskController.getAllTasks = async (req, res, next) => {
   try {
-    // Grab array of ALL values in task table using await db.query() and store in a variable
     const everyTask = await db.query('SELECT * FROM task');
-    // store rows in res.locals.tasklist
     res.locals.tasklist = everyTask.rows;
-    // router 
     return next();
-  }
-  catch (err) {
+  } catch (err) {
     return next({
-      log: 'Express error with middleware function taskController.getTask',
-      message: { err: 'Express error with middleware function taskController.getTask' }
+      log: `taskController.getTask: ERROR: ${err}`,
+      message: { err: 'Error occurred in taskController.getTask. Check server logs for more details.' }
     })
   };
 };
 
-taskController.deleteTask = (req, res, next) => {
+taskController.deleteTask = async (req, res, next) => {
+  try {
+    const { id } = req.body;
 
+    const SQLquery = `DELETE FROM task WHERE task_id='${id}'`;
+    const results = await db.query(SQLquery);
+    return next()
+  } catch (err) {
+    return next({
+      log: `taskController.deleteTask: ERROR: ${err}`,
+      message: { err: 'Error occurred in taskController.getTask. Check server logs for more details.' }
+    })
+  }
 };
 
 
