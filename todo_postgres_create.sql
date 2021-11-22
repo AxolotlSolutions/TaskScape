@@ -13,6 +13,7 @@
 -- creating table & schema for task data
 CREATE TABLE task (
   "task_id" SERIAL NOT NULL,
+  "name" VARCHAR NOT NULL,
   "done" BOOL NOT NULL,
   "value" INTEGER
 );
@@ -20,6 +21,7 @@ CREATE TABLE task (
 -- creating table & schema for rewards data
 CREATE TABLE rewards (
   "rewards_id" SERIAL NOT NULL,
+  "name" VARCHAR NOT NULL,
   "done" BOOL NOT NULL,
   "value" INTEGER
 );
