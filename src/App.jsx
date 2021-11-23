@@ -18,7 +18,6 @@ function App() {
   )
 }
 
-console.log('HELLO WORLD')
 
 // Renders an 'app' component to the index.html
 ReactDOM.render(<App />, document.getElementById("app"));

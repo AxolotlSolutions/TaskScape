@@ -1,9 +1,11 @@
 const express = require('express');
+//path helps you reference a file. it takes you to a specific file .
 const path = require('path'); // NEW
 const router = express.Router();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
 
 // /dist/ folder path
 const DIST_DIR = path.join(__dirname, '../dist');
@@ -54,3 +56,5 @@ app.use((err, req, res, next) => {
 app.listen(port, function () {
   console.log('App listening on port: ' + port);
 });
+
+
