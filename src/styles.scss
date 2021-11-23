@@ -1,5 +1,69 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Roboto,
-    Arial, sans-serif;
-  color: brown;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Roboto,
+		Arial, sans-serif;
+	color: #cc313d;
+	background-image: url("https://www.stockvault.net/data/2019/08/28/268838/preview16.jpg");
+	background-size: cover;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+#bgMascot{
+  bottom: 2%; 
+	position: fixed; 
+	right: 3%;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Roboto,
+		Arial, sans-serif;
+	color: brown;
+	background-image: url("https://www.stockvault.net/data/2019/08/28/268838/preview16.jpg");
+	background-size: cover;
+}
+.navContainer {
+	display: flex;
+	width: 100%;
+}
+// .navContainer {
+// 	display: flex;
+// 	width: 100%;
+// }
+.btnDefault {
+	// display: flex;
+	background-color: pink;
+  color: #cc313d;
+	align-content: space-around;
+	height: 40px;
+	width: 100px;
+	padding-left: 10px;
+	// border-radius: 15px 50px 30px;
+	border: none;
+	margin-left: 20px;
+	margin-top: 20px;
+	// opacity: 40%
+}
+
+.btnForm {
+	// display: flex;
+	background-color: lightpink;
+	align-content: space-around;
+	height: 20px;
+	width: 40px;
+	padding-left: 100px;
+	border-radius: 15px 50px 30px;
+	border: none;
+	margin-left: 20px;
+	margin-top: 20px;
+	// opacity: 70%
+}
+
+.mainContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
