@@ -7,7 +7,7 @@ const Rewards = () => {
 			<form>
 				<label> Insert Reward Here </label>
 				<input className='inputField' type='text' />
-				<button className='btnForm'> </button>
+				<button className='btnDefault'>Add Reward</button>
 			</form>
 		</div>
 	);

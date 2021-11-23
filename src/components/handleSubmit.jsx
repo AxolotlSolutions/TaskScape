@@ -11,17 +11,17 @@ const SubmitTask = (props) => {
 	};
 	return (
 		<div>
-			<label>
+			<label>Insert Task Here</label>
 				<input
 					className='inputField'
 					value={taskCreated}
 					type='text'
 					onChange={(e) => setTaskCreated(e.target.value)}
 				/>
-				<button onClick={handleSubmit} className='btnForm'>
+				
+				<button onClick={handleSubmit} className='btnDefault'>
 					Add Task
 				</button>
-			</label>
 		</div>
 	);
 };
