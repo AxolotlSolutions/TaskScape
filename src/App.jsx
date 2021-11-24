@@ -1,14 +1,19 @@
-import './styles.scss';
-import React, { Component } from 'react';
+import "./styles.scss";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Homepage from "./Homepage.jsx"
-import Input from './inputBox'
+import LoginPage from "./LoginPage.jsx";
+import { useState } from "react";
+import MainContainer from "./components/MainContainer.jsx";
 
 function App() {
   return(
+    
     <div>
-      Hello
-     
+      <h1><center>I Need An Adult!</center></h1>
+      <nav style={{ borderBottom: 'solid 1px', paddingBottom: '1rem' }}>
+        <LoginPage />
+      </nav>
+      <MainContainer />
     </div>
   )
 }
